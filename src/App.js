@@ -6,20 +6,18 @@ function App() {
     <div>
       <h1>react-movie-app</h1>
       <p>Hello, I'm Choco.</p>
-      <Food name="kimchi" />
+      {/* <Food name="kimchi" />
       <Food name="ramen" />
-      <Food name="samgiopsal" />
+      <Food name="samgiopsal" /> */}
+      {foodILike.map((food) => <Food name={food.name} />)}
     </div>
   );
 }
 
-// function Food(props) {
-//   return <h3>I like {props.name}!</h3>;
-// }
-
-// Same as above
 function Food({ name }) {
   return <h3>I like {name}!</h3>;
 }
+
+const foodILike = [{name: 'kimchi'}, {name: 'ramen'}, {name: 'samgiopsal'}];
 
 export default App;
